@@ -21,7 +21,6 @@ ALL:=
 #########
 # RULES #
 #########
-.DEFAULT_GOAL=all
 .PHONY: all
 all: $(ALL)
 

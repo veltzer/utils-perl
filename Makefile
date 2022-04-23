@@ -23,6 +23,7 @@ ALL:=
 #########
 .PHONY: all
 all: $(ALL)
+	@true
 
 .PHONY: install
 install:

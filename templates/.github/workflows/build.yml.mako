@@ -12,7 +12,7 @@ jobs:
         python-version: ${pydmt.helpers.python.get_list_unquoted(config.python.test_python)}
     steps:
     - name: checkout
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
     - name: python ${"${{ matrix.python-version }}"}
       uses: actions/setup-python@v3
       with:

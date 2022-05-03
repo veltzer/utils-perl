@@ -17,3 +17,5 @@ nytprof.out
 *.bs
 /_eumm/
 *.stamp
+/.pydmt
+__pycache__

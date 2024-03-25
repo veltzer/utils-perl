@@ -11,4 +11,5 @@ packages=[
     "libwww-perl",
     "libyaml-perl",
     "libimdb-film-perl",
+    "libvideo-info-perl",
 ]

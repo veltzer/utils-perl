@@ -10,4 +10,5 @@ packages=[
     "libxml-simple-perl",
     "libwww-perl",
     "libyaml-perl",
+    "libimdb-film-perl",
 ]

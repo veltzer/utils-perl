@@ -5,4 +5,5 @@ packages=[
     "libmp3-info-perl",
     "libmp3-tag-perl",
     "libdate-manip-perl",
+    "libconfig-inifiles-perl",
 ]

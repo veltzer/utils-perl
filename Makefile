@@ -48,6 +48,16 @@ debug:
 	$(info ALL_PL is $(ALL_PL))
 	$(info ALL_LINT is $(ALL_LINT))
 
+.PHONY: clean
+clean:
+	$(info doing [$@])
+	$(Q)rm -f $(ALL)
+
+.PHONY: clean_hard
+clean_hard:
+	$(info doing [$@])
+	$(Q)git clean -qffxd
+
 ############
 # patterns #
 ############

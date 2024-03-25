@@ -9,4 +9,5 @@ packages=[
     "libfile-homedir-perl",
     "libxml-simple-perl",
     "libwww-perl",
+    "libyaml-perl",
 ]

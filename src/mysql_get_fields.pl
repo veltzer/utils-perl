@@ -43,6 +43,7 @@ sub get_fields($$) {
 }
 
 my($param_table)=undef;
+my($param_rcfile);
 GetOptions(
 	'rcfile=s' => \$param_rcfile,
 	'table=s' => \$param_table,

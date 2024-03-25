@@ -7,4 +7,5 @@ packages=[
     "libdate-manip-perl",
     "libconfig-inifiles-perl",
     "libfile-homedir-perl",
+    "libxml-simple-perl",
 ]

@@ -8,4 +8,5 @@ packages=[
     "libconfig-inifiles-perl",
     "libfile-homedir-perl",
     "libxml-simple-perl",
+    "libwww-perl",
 ]

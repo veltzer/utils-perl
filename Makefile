@@ -63,6 +63,6 @@ clean_hard:
 ############
 $(ALL_LINT): out/%.lint: %.pl
 	$(info doing [$@])
-	$(Q)pymakehelper only_print_on_error perl -Mstrict -Mdiagnostics -cw $<
-	$(Q)pymakehelper only_print_on_error perl -MO=Lint $<
+	$(Q)pymakehelper only_print_on_error perl -Isrc -Mstrict -Mdiagnostics -cw $<
+	$(Q)pymakehelper only_print_on_error perl -Isrc -MO=Lint $<
 	$(Q)pymakehelper touch_mkdir $@

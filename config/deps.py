@@ -6,4 +6,5 @@ packages=[
     "libmp3-tag-perl",
     "libdate-manip-perl",
     "libconfig-inifiles-perl",
+    "libfile-homedir-perl",
 ]

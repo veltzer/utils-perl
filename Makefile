@@ -20,10 +20,6 @@ Q:=@
 #.SILENT:
 endif # DO_MKDBG
 
-ifeq ($(DO_ALLDEP),1)
-.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
-endif # DO_ALLDEP
-
 ALL:=
 ALL_PL:=$(shell find src -name "*.pl")
 ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PL))))
@@ -66,3 +62,10 @@ $(ALL_LINT): out/%.lint: %.pl
 	$(Q)pymakehelper only_print_on_error perl -Isrc -Mstrict -Mdiagnostics -cw $<
 	$(Q)pymakehelper only_print_on_error perl -Isrc -MO=Lint $<
 	$(Q)pymakehelper touch_mkdir $@
+
+##########
+# alldep #
+##########
+ifeq ($(DO_ALLDEP),1)
+.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
+endif # DO_ALLDEP

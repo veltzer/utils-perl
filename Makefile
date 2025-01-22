@@ -21,7 +21,7 @@ Q:=@
 endif # DO_MKDBG
 
 ALL:=
-ALL_PL:=$(shell find -type f -and src -name "*.pl")
+ALL_PL:=$(shell find src -type f -and -name "*.pl")
 ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PL))))
 
 ifeq ($(DO_LINT),1)

@@ -1,3 +1,7 @@
+"""
+os level dependencies for this project
+"""
+
 packages=[
     "libdbi-perl",
     "libperl6-slurp-perl",

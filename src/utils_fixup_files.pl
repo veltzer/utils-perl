@@ -1,5 +1,11 @@
 #!/usr/bin/perl -w
 
+=head1 DESCRIPTION
+
+a generic script to fix source files in this project.
+
+=cut
+
 # a generic script to fix source files in this project
 
 use strict;

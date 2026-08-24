@@ -5,7 +5,7 @@ use diagnostics;
 use File::Spec qw();
 use File::Basename qw();
 
-=head
+=head1 DESCRIPTION
 
 This is a script that runs pdflatex for us.
 Why do we need this script ?

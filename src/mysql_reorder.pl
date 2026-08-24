@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-=head
+=head1 DESCRIPTION
 
 this script reorders a table and fixes references to it
 

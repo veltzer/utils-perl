@@ -1,5 +1,11 @@
 package MyImdb;
 
+=head1 DESCRIPTION
+
+MyImdb - helpers for looking up movie data from IMDb.
+
+=cut
+
 use strict;
 use XML::Simple qw();
 use LWP::Simple qw();

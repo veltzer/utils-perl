@@ -1,5 +1,12 @@
 #!/usr/bin/perl -w
 
+=head1 DESCRIPTION
+
+This script touches a file with the latest time of any of the files
+that he finds.
+
+=cut
+
 # This script touches a file with the latest time of any of the files
 # that he finds...
 

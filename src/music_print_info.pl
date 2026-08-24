@@ -1,5 +1,11 @@
 #!/usr/bin/perl -w
 
+=head1 DESCRIPTION
+
+This script prints id3v2 info for a file.
+
+=cut
+
 use strict;
 use diagnostics;
 use MP3::Tag;

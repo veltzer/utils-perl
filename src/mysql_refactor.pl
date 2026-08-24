@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-=head
+=head1 DESCRIPTION
 
 this script eases the work of refactoring tables.
 YOU need to massage it a bit in order to fit it for a specific refactoring

@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-=head
+=head1 DESCRIPTION
 
 This is a script that wraps the running of make.
 

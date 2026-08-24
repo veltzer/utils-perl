@@ -1,5 +1,12 @@
 #!/usr/bin/perl -w
 
+=head1 DESCRIPTION
+
+This is a general script to grep using perl to overcome some of the
+definiencies of grep(1) grepping.
+
+=cut
+
 # This is a general script to grep using perl to overcome some of the definiencies
 # of grep(1) grepping...
 

@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-=head
+=head1 DESCRIPTION
 
 this script gets string dates from the database and reinserts them as real mysql datetime
 objects...

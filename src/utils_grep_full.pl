@@ -1,5 +1,11 @@
 #!/usr/bin/perl -w
 
+=head1 DESCRIPTION
+
+this is a script that greps a full file instead of line by line.
+
+=cut
+
 # this is a script that greps a full file instead of line by line.
 
 use strict;

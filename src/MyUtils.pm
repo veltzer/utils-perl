@@ -1,5 +1,11 @@
 package MyUtils;
 
+=head1 DESCRIPTION
+
+MyUtils - shared helpers: date conversion, user prompting and database access.
+
+=cut
+
 use strict;
 use warnings;
 

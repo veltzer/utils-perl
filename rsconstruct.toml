@@ -6,3 +6,39 @@ src_dirs = ["."]
 
 [processor.perlcritic]
 src_dirs = ["src"]
+
+# Compile-check: catches undeclared vars, bad imports, real syntax errors —
+# things perlcritic (a static style checker) does not see.
+[processor.script.perl_compile]
+command = "perl"
+args = ["-I", "src", "-c"]
+src_dirs = ["src"]
+src_extensions = [".pl", ".pm"]
+batch = false
+required_tools = ["perl"]
+
+# POD documentation syntax. Every file carries POD, so this covers the whole
+# tree; podchecker exits 2 on a file with no POD at all, so a new .pl/.pm here
+# must have a =head1 DESCRIPTION block.
+[processor.script.podchecker]
+command = "podchecker"
+src_dirs = ["src"]
+src_extensions = [".pl", ".pm"]
+batch = false
+required_tools = ["perl"]
+
+# perltidy — formatting. Disabled: it reformats 23/24 files (~1257 lines),
+# because it disagrees with the compact style used here (my($x)=1 becomes
+# my ($x) = 1). -et=1 -i=1 keeps the tab indentation .editorconfig mandates
+# for *.pl/*.pm. Flip enabled=true to adopt it, then run `rsconstruct fix`
+# once to reformat the tree in a single commit.
+[processor.script.perltidy]
+command = "perltidy"
+args = ["-et=1", "-i=1", "--assert-tidy", "-se", "-o=/dev/null"]
+fix_command = "perltidy"
+fix_args = ["-et=1", "-i=1", "-b", "-bext=/"]
+src_dirs = ["src"]
+src_extensions = [".pl", ".pm"]
+batch = false
+enabled = false
+required_tools = ["perl"]

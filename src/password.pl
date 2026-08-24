@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-=head
+=head1 DESCRIPTION
 
 This script generates a random password for you.
 

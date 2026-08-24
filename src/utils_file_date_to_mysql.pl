@@ -1,5 +1,11 @@
 #!/usr/bin/perl -w
 
+=head1 DESCRIPTION
+
+this script converts file dates to mysql date format.
+
+=cut
+
 use strict;
 use diagnostics;
 use Date::Manip qw();

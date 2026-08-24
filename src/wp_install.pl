@@ -1,5 +1,25 @@
 #!/usr/bin/perl -w
 
+=head1 DESCRIPTION
+
+This script installs my blog into a directory of your choosing.
+
+It will:
+
+=over
+
+=item * clean the old folder.
+
+=item * install wordpress to the folder.
+
+=item * install third party and my plugin to the folder.
+
+=item * change any needed configuration files.
+
+=back
+
+=cut
+
 # This script installs my blog into a directory of your choosing...
 # It will:
 # 1. clean the old folder.

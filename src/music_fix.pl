@@ -1,5 +1,11 @@
 #!/usr/bin/perl -w
 
+=head1 DESCRIPTION
+
+this script fixes id3 tag info in files.
+
+=cut
+
 use strict;
 use diagnostics;
 use MP3::Info qw();

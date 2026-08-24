@@ -1,5 +1,11 @@
 package MyVideo;
 
+=head1 DESCRIPTION
+
+MyVideo - helpers for extracting information from video files.
+
+=cut
+
 use strict;
 use warnings;
 use IPC::Open3;

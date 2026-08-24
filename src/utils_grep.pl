@@ -1,5 +1,15 @@
 #!/usr/bin/perl -w
 
+=head1 DESCRIPTION
+
+This is a general script to grep using perl to overcome some of the
+definiencies of grep(1) grepping.
+
+The reason this script is here is to make this source repository
+independant of any of my other stuff.
+
+=cut
+
 # This is a general script to grep using perl to overcome some of the definiencies
 # of grep(1) grepping...
 # The reason this script is here is to make this source repository independant of any

@@ -1,5 +1,23 @@
 #!/usr/bin/perl -w
 
+=head1 DESCRIPTION
+
+this script lists all extra files not known to git.
+
+How does it do it?
+
+=over
+
+=item * list all files in the folder recursivly (File::Find), disregarding the .git subfolder.
+
+=item * list all files which git knows about (git ls-files).
+
+=item * subtract the second from the first.
+
+=back
+
+=cut
+
 # this script lists all extra files not known to git
 # how does it do it?
 # - list all files in the folder recursivly (File::Find).

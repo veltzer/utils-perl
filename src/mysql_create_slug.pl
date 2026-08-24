@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-=head
+=head1 DESCRIPTION
 
 this script creates a slug in the database.
 give it a table, a field and a field to put the slug in and it will do the rest.

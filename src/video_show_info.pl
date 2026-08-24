@@ -1,5 +1,11 @@
 #!/usr/bin/perl -w
 
+=head1 DESCRIPTION
+
+this script shows information about a video file.
+
+=cut
+
 use strict;
 use warnings;
 use MyVideo qw();

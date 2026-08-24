@@ -30,7 +30,7 @@ my($debug)=1;
 
 # functions
 
-sub unixdate_to_mysql($) {
+sub unixdate_to_mysql {
 	my($string)=@_;
 	my($object)=Date::Manip::UnixDate($string,'%Y-%m-%d %T');
 	return($object);

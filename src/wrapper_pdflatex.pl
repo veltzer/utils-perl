@@ -41,15 +41,15 @@ my($qpdf)=1;
 # this function is adjusted for the ugly output that pdflatex produces and so it
 # only prints the lines between lines starting with '!' (including the actual lines
 # starting with '!'). Apparently this is how pdflatex shows errors. Ugrrr...
-sub printout($) {
+sub printout {
 	my($filename)=@_;
 	if($debug) {
 		print STDERR 'printing ['.$filename.']'."\n";
 	}
-	open(FILE,$filename) || die('unable to open ['.$filename.']');
+	open(my $fh,'<',$filename) || die('unable to open ['.$filename.']');
 	my($line);
 	my($inerr)=0;
-	while($line=<FILE>) {
+	while($line=<$fh>) {
 		if($inerr) {
 			print STDERR $line;
 			if($line=~/^\!/) {
@@ -62,10 +62,10 @@ sub printout($) {
 			}
 		}
 	}
-	close(FILE) || die('unable to close ['.$filename.']');
+	close($fh) || die('unable to close ['.$filename.']');
 }
 # this is a function that removes a file and can optionally die if there is a problem
-sub unlink_check($$$) {
+sub unlink_check {
 	my($file,$check,$doit)=@_;
 	if($doit) {
 		if($debug) {
@@ -80,7 +80,7 @@ sub unlink_check($$$) {
 	}
 }
 # this is a function that chmods a file and can optionally die if there is a problem
-sub chmod_check($$) {
+sub chmod_check {
 	my($file,$check)=@_;
 	if($debug) {
 		print STDERR 'chmodding ['.$file.']'."\n";
@@ -93,7 +93,7 @@ sub chmod_check($$) {
 	}
 }
 # this wraps calls to system()
-sub my_system($) {
+sub my_system {
 	my($cmd)=@_;
 	if($debug) {
 		print STDERR 'my_system ['.$cmd.']'."\n";
@@ -105,7 +105,7 @@ sub my_system($) {
 	return $res;
 }
 # this is a function that renames a file and dies if there is a problem 
-sub my_rename($$$) {
+sub my_rename {
 	my($old,$new,$check)=@_;
 	if($debug) {
 		print STDERR 'my_rename ['.$old.','.$new.']'."\n";

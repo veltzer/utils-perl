@@ -22,10 +22,10 @@ for(my($i)=1;$i<@ARGV;$i++) {
 	if($debug) {
 		print "filename is [$filename]\n";
 	}
-	open(FILE,$filename) || die "Can't open file [$filename]: $!";
+	open(my $fh,'<',$filename) || die "Can't open file [$filename]: $!";
 	my($line);
 	my($line_number)=1;
-	while($line=<FILE>) {
+	while($line=<$fh>) {
 		if($line=~$pattern) {
 			if($print_filename) {
 				print $filename.":".$line_number." ";
@@ -34,5 +34,5 @@ for(my($i)=1;$i<@ARGV;$i++) {
 		}
 		$line_number++;
 	}
-	close(FILE) || die("unable to close file [$filename]: $!");
+	close($fh) || die("unable to close file [$filename]: $!");
 }

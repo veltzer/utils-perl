@@ -14,7 +14,7 @@ my($max)=0;
 my($max_filename)=undef;
 
 # functions
-sub handler() {
+sub handler {
 	my($filename)=$File::Find::name;
 	my($dev,$ino,$mode,$nlink,$uid,$gid,$rdev,$size,
 		$atime,$mtime,$ctime,$blksize,$blocks)
@@ -53,8 +53,8 @@ if(-f $compare) {
 	}
 } else {
 	# create the file with the $max attribute
-	open(FILE,"> ".$compare) || die("unable to open file $compare");
-	close(FILE) || die("unable to close file $compare");
+	open(my $fh,">",$compare) || die("unable to open file $compare");
+	close($fh) || die("unable to close file $compare");
 	utime($max,$max,$compare);
 }
 if($debug) {

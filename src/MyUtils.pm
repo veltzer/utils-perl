@@ -1,5 +1,8 @@
 package MyUtils;
 
+use strict;
+use warnings;
+
 # uses
 
 use Date::Manip;
@@ -9,7 +12,7 @@ use File::HomeDir;
 
 # functions
 
-sub to_mysql($) {
+sub to_mysql {
 	my($string)=@_;
 	my($object)=Date::Manip::UnixDate($string,'%Y-%m-%d %T');
 	if(!defined($object)) {
@@ -51,7 +54,7 @@ sub show_menu {
 	return $result;
 }
 
-sub show_yes_no_dialog($) {
+sub show_yes_no_dialog {
 	my($question)=$_[0];
 	my($stop)=0;
 	my($result);
@@ -74,7 +77,7 @@ sub show_yes_no_dialog($) {
 	return $result;
 }
 
-sub get_from_user($) {
+sub get_from_user {
 	my($message)=$_[0];
 	print STDOUT $message;
 	flush STDOUT;
@@ -84,7 +87,7 @@ sub get_from_user($) {
 	return $res;
 }
 
-sub delete_work($$) {
+sub delete_work {
 	my($dbh)=$_[0];
 	my($f_id)=$_[1];
 	$dbh->do('DELETE FROM TbWkWorkAuthorization WHERE workId=?',undef,$f_id);
@@ -98,14 +101,15 @@ sub delete_work($$) {
 	$dbh->do('DELETE FROM TbWkWork WHERE id=?',undef,$f_id);
 }
 
-sub handle_error() {
+sub handle_error {
+	my($dbh)=$_[0];
 	my($rc)=$dbh->err;
 	my($str)=$dbh->errstr;
 	my($rv)=$dbh->state;
 	throw Error::Simple($str.','.$rv.','.$rv);
 }
 
-sub db_connect() {
+sub db_connect {
 	my($rcfile)=File::HomeDir->my_home.'/.perlmyworld.ini';
 	my($cfg);
 	$cfg=Config::IniFiles->new( -file => $rcfile ) || die('unable to access ini file '.$rcfile);

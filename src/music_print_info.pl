@@ -17,12 +17,10 @@ for(my($i)=0;$i<@ARGV;$i++) {
 	}
 	my($id3v2)=$mp3->{"ID3v2"};
 	my($frameIDs_hash)=$id3v2->get_frame_ids('truename');
-	my($frame);
-	foreach $frame (keys %$frameIDs_hash) {
+	foreach my $frame (keys %$frameIDs_hash) {
 		print "$frame\n";
 		my ($name, @info) = $id3v2->get_frames($frame);
-		my($info);
-		for $info (@info) {
+		for my $info (@info) {
 			if (ref $info) {
 				print "$name ($frame):\n";
 				while(my ($key,$val)=each %$info) {

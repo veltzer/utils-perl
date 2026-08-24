@@ -25,7 +25,7 @@ my($param_field_to)='slug';
 
 # functions
 
-sub to_slug($) {
+sub to_slug {
 	my($val)=$_[0];
 	return join('-',map(lc,split(' ',$val)));
 }

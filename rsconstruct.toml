@@ -3,3 +3,6 @@
 
 [processor.taplo]
 src_dirs = ["."]
+
+[processor.perlcritic]
+src_dirs = ["src"]

@@ -15,7 +15,7 @@ use File::Find qw();
 my($debug)=0;
 my(%hash)=();
 
-sub handler() {
+sub handler {
 	my($file)=$File::Find::name;
 	if(!(-f $file)) {
 		return;
@@ -32,16 +32,16 @@ sub handler() {
 # find all files in the folder...
 File::Find::find({"no_chdir"=>1,"wanted"=>\&handler},".");
 
-open(FILE,"git ls-files |") || die("unable to run git");
+open(my $fh,"-|","git","ls-files") || die("unable to run git");
 my($line);
-while($line=<FILE>) {
+while($line=<$fh>) {
 	chop($line);
 	if($debug) {
 		print 'saw line ['.$line.']'."\n";
 	}
 	delete($hash{'./'.$line});
 }
-close(FILE) || die("unable to close git");
+close($fh) || die("unable to close git");
 
 while(my($file,$val)=each %hash) {
 	print 'extra file ['.$file.']'."\n";

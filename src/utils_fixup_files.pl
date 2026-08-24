@@ -19,17 +19,17 @@ if($debug) {
 }
 
 my(@inc);
-open(IN,$infile) || die('unable to open input file for reading');
-open(FILE,'> '.$outfile) || die('unable to open output file for writing');
+open(my $in,'<',$infile) || die('unable to open input file for reading');
+open(my $out,'>',$outfile) || die('unable to open output file for writing');
 #print FILE "<%page args=\"part\"/>"."\n";
 my($line);
-while($line=<IN>) {
+while($line=<$in>) {
 	chop($line);
 	if($line=~/^\t+attributes\[\'do/) {
 		my($content)=($line=~/^\t+(.*)$/);
 		$line="\t".$content;
 	}
-	print FILE $line."\n";
+	print {$out} $line."\n";
 }
-close(IN) || die('unable to close input file');
-close(FILE) || die('unable to close output file');
+close($in) || die('unable to close input file');
+close($out) || die('unable to close output file');

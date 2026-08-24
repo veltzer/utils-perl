@@ -7,7 +7,7 @@ use IPC::Open3;
 # http://www.andrewault.net/2010/07/09/perl-script-to-get-video-details/
  
 # returns media information in a hash
-sub info($) {
+sub info {
 	my $file = shift;
 
 	# ffmpeg command

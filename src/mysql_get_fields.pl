@@ -22,7 +22,7 @@ my($debug)=1;
 
 # code
 
-sub get_fields($$) {
+sub get_fields {
 	my($dbh, $table)=@_;
 	if($debug) {
 		print 'table is '.$table."\n";

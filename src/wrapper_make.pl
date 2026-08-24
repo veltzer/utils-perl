@@ -23,7 +23,7 @@ my($prog)='make';
 my($remove_tmp)=1;
 
 # this is a function that removes a file and can optionally die if there is a problem
-sub unlink_check($$) {
+sub unlink_check {
 	my($file,$check)=@_;
 	if($debug) {
 		print 'unlinking ['.$file.']'."\n";
@@ -55,12 +55,12 @@ if($res) {
 		print 'res is ['.$res.']'."\n";
 	}
 	# print the errors
-	open(FILE,$tmp_fname) || die('unable to open');
+	open(my $fh,'<',$tmp_fname) || die('unable to open');
 	my($line);
-	while($line=<FILE>) {
+	while($line=<$fh>) {
 		print $line;
 	}
-	close(FILE) || die('unable to close');
+	close($fh) || die('unable to close');
 	# remove the tmp file for the errors
 	if($remove_tmp) {
 		unlink_check($tmp_fname,1);

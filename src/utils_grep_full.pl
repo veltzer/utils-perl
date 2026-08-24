@@ -21,12 +21,12 @@ for(my($i)=2;$i<@ARGV;$i++) {
 	}
 	# read the entire file
 	my($content)='';
-	open(FILE,$filename) || die "Can't open file [$filename]: $!";
+	open(my $fh,'<',$filename) || die "Can't open file [$filename]: $!";
 	my($line);
-	while($line=<FILE>) {
+	while($line=<$fh>) {
 		$content.=$line;
 	}
-	close(FILE) || die("unable to close file [$filename]: $!");
+	close($fh) || die("unable to close file [$filename]: $!");
 	if($content=~$pattern) {
 		if(!defined($printed_filenames{$filename})) {
 			print $filename."\n";

@@ -13,7 +13,7 @@ sub escapeSingleQuote {
 	return $str;
 }
 
-sub get_movie_by_imdbid($) {
+sub get_movie_by_imdbid {
 	my($imdbid)=$_[0];
 	my($url)=URI->new('http://www.imdbapi.com');
 	$url->query_form(
@@ -25,7 +25,7 @@ sub get_movie_by_imdbid($) {
 	return $movieData;
 }
 
-sub get_movie_by_title($) {
+sub get_movie_by_title {
 	my($title)=$_[0];
 	#my($sr_title)=$title;
 	#$sr_title =~ s/\s/+/g;
@@ -61,10 +61,10 @@ sub get_movie_by_title($) {
 		if($f_title eq $title) {
 			return $data->{movie};
 		} else {
-			return undef;
+			return;
 		}
 	} else {
-		return undef;
+		return;
 	}
 }
 

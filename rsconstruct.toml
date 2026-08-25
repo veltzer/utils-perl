@@ -42,3 +42,30 @@ src_extensions = [".pl", ".pm"]
 batch = false
 enabled = false
 required_tools = ["perl"]
+
+# ─── dependencies ────────────────────────────────────────────────────────────
+
+# The perl_compile processor runs `perl -c` on every .pl/.pm, which loads each
+# module the sources `use`, so CI needs them present or compilation aborts at
+# the first missing one. These are the non-core modules used under src/;
+# everything else the sources use (Data::Dumper, File::Basename, File::Find,
+# File::Spec, Getopt::Long, IPC::Open3) ships with perl itself, and MyUtils,
+# MyImdb and MyVideo are repo-local. Debian package names verified with
+# `dpkg -S` against the file perl actually loads for each module.
+[dependencies]
+system = [
+    "libconfig-inifiles-perl",
+    "libdate-manip-perl",
+    "libdbi-perl",
+    "liberror-perl",
+    "libfile-homedir-perl",
+    "libimdb-film-perl",
+    "libmp3-info-perl",
+    "libmp3-tag-perl",
+    "libperl6-slurp-perl",
+    "liburi-perl",
+    "libvideo-info-perl",
+    "libwww-perl",
+    "libxml-simple-perl",
+    "libyaml-perl",
+]

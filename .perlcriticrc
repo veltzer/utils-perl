@@ -1,4 +1,4 @@
-# Start at severity 5 (the "must fix" level). Lower the number over time to
-# tighten the net once the current level is clean.
+# perlcritic config, shared fleet-wide (rsmultigit check-same).
+# Severity 5 is the "must fix" level; lower the number to tighten the net.
 severity = 5
 verbose = %f:%l:%c: [%p] %m\n
